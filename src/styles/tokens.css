@@ -1,0 +1,30 @@
+/* Design tokens  */
+
+:root {
+  --color-primary: #0672cb;
+  --color-primary-hover: #00539c;
+  --color-success: #1e7b34;
+  --color-border: #dddddd;
+  --color-bg-page: #fafafa;
+  --color-bg-card: #ffffff;
+  --color-text: #1a1a1c;
+  --color-text-muted: #6e6e73;
+
+  /* Supporting values the screenshots also rely on */
+  --color-primary-subtle: #eaf4fc; /* selected nav item */
+  --color-success-subtle: #e8f5ea; /* "Healthy" chip background */
+  --color-danger: #c9211e;
+  --color-warning: #b25a00;
+  --color-bg-subtle: #f5f6f7; /* table header, sidebar rail */
+  --color-text-inverse: #ffffff;
+
+  --font-family-base: "Roboto", "Segoe UI", -apple-system, Arial, sans-serif;
+  --font-size-sm: 0.75rem;
+  --font-size-md: 0.875rem;
+  --font-size-lg: 1rem;
+  --font-size-xl: 1.375rem;
+  --font-weight-regular: 400;
+  --font-weight-medium: 500;
+  --font-weight-bold: 700;
+  --line-height-base: 1.5;
+}
