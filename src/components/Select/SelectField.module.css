@@ -1,0 +1,23 @@
+.selectField {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.selectLabel {
+  width: 150px;
+  flex-shrink: 0;
+  color: var(--color-text);
+  font-family: var(--font-family-base);
+  font-size: var(--font-size-md);
+  font-weight: var(--font-weight-medium);
+  line-height: var(--line-height-base);
+}
+
+.selectBox {
+  padding: 8px 12px;
+  border-radius: 4px;
+  border: 1px solid var(--color-border);
+  font-weight: var(--font-weight-regular);
+  line-height: var(--line-height-base);
+}
