@@ -6,7 +6,8 @@ interface ButtonProps {
   icon?: ReactNode;
   iconPosition?: "start" | "end";
   variant?: "primary" | "secondary";
-  onClick: (event: MouseEvent<HTMLButtonElement>) => void;
+  type?: "button" | "submit" | "reset";
+  onClick?: (event: MouseEvent<HTMLButtonElement>) => void;
   disabled?: boolean;
 }
 
@@ -15,12 +16,13 @@ export function Button({
   icon,
   iconPosition = "start",
   variant = "primary",
+  type = "button",
   onClick,
   disabled = false,
 }: ButtonProps) {
   return (
     <button
-      type="button"
+      type={type}
       className={`${styles.button} ${variant === "primary" ? styles.primary : styles.secondary}`}
       disabled={disabled}
       onClick={onClick}
