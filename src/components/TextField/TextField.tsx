@@ -44,11 +44,11 @@ export function TextField({
         id={resolvedId}
         disabled={disabled}
       />
-      {type === "password" && (
+      {/* {type === "password" && (
         <button type="button" onClick={() => setPwdVisible((prev) => !prev)}>
           Toggle
         </button>
-      )}
+      )} */}
     </div>
   );
 }

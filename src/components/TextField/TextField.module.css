@@ -6,7 +6,7 @@
 }
 
 .label {
-  width: 150px;
+  width: var(--field-label-width, 150px);
   flex-shrink: 0;
   color: var(--color-text);
   font-family: var(--font-family-base);
