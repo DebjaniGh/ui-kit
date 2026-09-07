@@ -1,4 +1,5 @@
-import { useId, type ChangeEvent } from "react";
+import { type ChangeEvent } from "react";
+import { useFieldId } from "../../hooks/useFieldId";
 import styles from "./SelectField.module.css";
 
 interface SelectFieldProps {
@@ -16,8 +17,10 @@ export function SelectField({
   onChange,
   id,
 }: SelectFieldProps) {
-  const generatedId = useId();
-  const resolvedId = id ?? generatedId;
+  // state
+  const resolvedId = useFieldId(id);
+
+  // JSX
   return (
     <div className={styles.selectField}>
       <label htmlFor={resolvedId} className={styles.selectLabel}>

@@ -1,4 +1,5 @@
-import { useId, useState, type ChangeEvent } from "react";
+import { useState, type ChangeEvent } from "react";
+import { useFieldId } from "../../hooks/useFieldId";
 import styles from "./TextField.module.css";
 
 interface TextFieldProps {
@@ -21,13 +22,13 @@ export function TextField({
   type = "text",
 }: TextFieldProps) {
   // state
-  const generatedId = useId();
-  const resolvedId = id ?? generatedId;
+  const resolvedId = useFieldId(id);
   const [isPwdVisible, setPwdVisible] = useState(false);
   // if user has toggled on visibility for pwd field,
   // then we need to show it as "text";
   // type "password" means dotted field
   const inputType = type === "password" && isPwdVisible ? "text" : type;
+
   //JSX
   return (
     <div className={styles.field}>
