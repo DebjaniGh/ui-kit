@@ -21,7 +21,10 @@ interface LoginPageProps {
     value: string;
   }[];
   onSubmit: (credentials: Credentials) => void;
-  linksArray?: string[];
+  linksArray?: {
+    label: string;
+    href: string;
+  }[];
   miscellaneousMsg?: string;
 }
 
@@ -31,6 +34,7 @@ export function LoginPage({
   productSubtitle,
   domainOptions,
   onSubmit,
+  linksArray,
   miscellaneousMsg,
 }: LoginPageProps) {
   // state
@@ -52,7 +56,7 @@ export function LoginPage({
       <div className={styles.upperSection}>
         {productIcon && <div className={styles.productIcon}>{productIcon}</div>}
         <h1 className={styles.title}>{productTitle}</h1>
-        <div className={styles.companyLogo}>
+        <div className={styles.logoContainer}>
           <img
             className={styles.companyLogo}
             src={dellLogo}
@@ -91,6 +95,23 @@ export function LoginPage({
           </div>
         </Form>
       </div>
+      {linksArray && linksArray.length > 0 && (
+        <nav className={styles.links} aria-label="Helpful links">
+          {linksArray.map((link, index) => (
+            <span key={link.href}>
+              {index > 0 && <span className={styles.separator}>|</span>}
+              <a
+                className={styles.link}
+                href={link.href}
+                target="_blank"
+                rel="noreferrer"
+              >
+                {link.label}
+              </a>
+            </span>
+          ))}
+        </nav>
+      )}
       {miscellaneousMsg && (
         <div className={styles.miscellaneous}>{miscellaneousMsg}</div>
       )}

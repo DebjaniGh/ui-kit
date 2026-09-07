@@ -85,6 +85,32 @@
   margin-left: calc(var(--field-label-width) + var(--field-gap));
 }
 
+/* ---- links row ---- */
+.links {
+  flex: 0 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  padding: 0 1.5rem;
+  text-align: center;
+  font-size: var(--font-size-sm);
+}
+
+.link {
+  color: var(--color-primary);
+  text-decoration: none;
+}
+
+.link:hover {
+  text-decoration: underline;
+}
+
+.separator {
+  margin: 0 0.5rem;
+  color: var(--color-border);
+}
+
 .miscellaneous {
   flex: 0 0 auto;
   margin: 60px 0;

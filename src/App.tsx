@@ -9,6 +9,19 @@ function App() {
     { label: "Active Directory", value: "active_dir" },
   ];
 
+  const links = [
+    { label: "Help", href: "https://www.dell.com/support/home" },
+    {
+      label: "Drivers & Downloads",
+      href: "https://www.dell.com/support/home/en-us?app=drivers",
+    },
+    {
+      label: "Manuals",
+      href: "https://www.dell.com/support/home/en-us?app=manuals",
+    },
+    { label: "TechCenter", href: "https://developer.dell.com" },
+  ];
+
   const handleLogin = (credentials: Credentials) => {
     console.log(credentials);
   };
@@ -21,6 +34,7 @@ function App() {
         productSubtitle="Server Hostname | Server Model | License Type"
         domainOptions={selectOptions}
         onSubmit={handleLogin}
+        linksArray={links}
         miscellaneousMsg="Security Notice: Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
         "
       />
