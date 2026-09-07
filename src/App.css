@@ -1,0 +1,11 @@
+.btn-display {
+  display: flex;
+  gap: 12px;
+  padding: 18px;
+}
+
+.txtfields {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}

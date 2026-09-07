@@ -1,7 +1,7 @@
 import type { MouseEvent, ReactNode } from "react";
 import styles from "./Button.module.css";
 
-export interface ButtonProps {
+interface ButtonProps {
   label: string;
   icon?: ReactNode;
   iconPosition?: "start" | "end";
