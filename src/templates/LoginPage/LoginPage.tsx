@@ -1,4 +1,4 @@
-import { useState, type FormEvent, type ReactNode } from "react";
+import { useState, type ReactNode } from "react";
 import dellLogo from "../../assets/logoipsum-288.png";
 import styles from "./LoginPage.module.css";
 import { Form } from "../../components/Form/Form";
@@ -42,7 +42,7 @@ export function LoginPage({
   const [pwd, setPwd] = useState("");
   const [domain, setDomain] = useState("");
 
-  const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
+  const handleSubmit = () => {
     onSubmit({
       username: usrname,
       password: pwd,
