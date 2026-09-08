@@ -23,7 +23,10 @@ export function TextField({
 }: TextFieldProps) {
   // state
   const resolvedId = useFieldId(id);
-  const [isPwdVisible, setPwdVisible] = useState(false);
+  const [
+    isPwdVisible,
+    //setPwdVisible
+  ] = useState(false);
   // if user has toggled on visibility for pwd field,
   // then we need to show it as "text";
   // type "password" means dotted field
