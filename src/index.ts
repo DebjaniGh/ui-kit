@@ -4,4 +4,7 @@ export { TextField } from "./components/TextField/TextField";
 export { SelectField } from "./components/Select/SelectField";
 export { Form } from "./components/Form/Form";
 export { LoginPage } from "./templates/LoginPage/LoginPage";
+export { RSALoginPage } from "./templates/RSALoginPage/RSALoginPage";
+export { SmartCardLoginPage } from "./templates/SmartCardLogin/SmartCardLogin";
 export type { Credentials } from "./templates/LoginPage/LoginPage";
+export type { RSACredentials } from "./templates/RSALoginPage/RSALoginPage";
