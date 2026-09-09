@@ -1,4 +1,8 @@
 import { Card } from "./components/Card/Card";
+import { StatusIndicator } from "./components/StatusIndicator/StatusIndicator";
+import warningIcon from "./assets/triangle-alert.svg";
+import healthyIcon from "./assets/circle-check.svg";
+import criticalIcon from "./assets/octagon-x.svg";
 
 function App() {
   const jobs = [
@@ -9,6 +13,21 @@ function App() {
 
   return (
     <div>
+      <StatusIndicator
+        title="CPU Health"
+        icon={<img src={criticalIcon} alt="critical" />}
+        status="critical"
+      />
+      <StatusIndicator
+        title="System Health"
+        icon={<img src={warningIcon} alt="warning" />}
+        status="warning"
+      />
+      <StatusIndicator
+        title="Server Health"
+        icon={<img src={healthyIcon} alt="healthy" />}
+        status="healthy"
+      />
       <Card title="System Information" footer="View All">
         <div>
           {jobs.map((job) => (

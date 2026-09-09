@@ -7,6 +7,8 @@ export { LoginPage } from "./templates/LoginPage/LoginPage";
 export { RSALoginPage } from "./templates/RSALoginPage/RSALoginPage";
 export { SmartCardLoginPage } from "./templates/SmartCardLogin/SmartCardLogin";
 export { Card } from "./components/Card/Card";
+export { StatusIndicator } from "./components/StatusIndicator/StatusIndicator";
+export type { Status } from "./components/StatusIndicator/StatusIndicator";
 export type { Credentials } from "./templates/LoginPage/LoginPage";
 export type { RSACredentials } from "./templates/RSALoginPage/RSALoginPage";
 export type { SCCredentials } from "./templates/SmartCardLogin/SmartCardLogin";

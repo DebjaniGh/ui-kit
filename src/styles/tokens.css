@@ -14,7 +14,9 @@
   --color-primary-subtle: #eaf4fc; /* selected nav item */
   --color-success-subtle: #e8f5ea; /* "Healthy" chip background */
   --color-danger: #c9211e;
+  --color-danger-subtle: #fdecec; /* "Critical" chip background */
   --color-warning: #b25a00;
+  --color-warning-subtle: #fdf3e6; /* "Warning" chip background */
   --color-bg-subtle: #f5f6f7; /* table header, sidebar rail */
   --color-text-inverse: #ffffff;
 
