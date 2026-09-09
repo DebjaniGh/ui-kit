@@ -8,3 +8,4 @@ export { RSALoginPage } from "./templates/RSALoginPage/RSALoginPage";
 export { SmartCardLoginPage } from "./templates/SmartCardLogin/SmartCardLogin";
 export type { Credentials } from "./templates/LoginPage/LoginPage";
 export type { RSACredentials } from "./templates/RSALoginPage/RSALoginPage";
+export type { SCCredentials } from "./templates/SmartCardLogin/SmartCardLogin";
