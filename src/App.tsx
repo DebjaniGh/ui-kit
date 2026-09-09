@@ -1,79 +1,35 @@
-import productIcon from "./assets/new_logo.svg";
-import "./App.css";
-// import { LoginPage, type Credentials } from "./templates/LoginPage/LoginPage";
-// import {
-//   SmartCardLoginPage,
-//   type SCCredentials,
-// } from "./templates/SmartCardLogin/SmartCardLogin";
-import {
-  RSALoginPage,
-  type RSACredentials,
-} from "./templates/RSALoginPage/RSALoginPage";
+import { Card } from "./components/Card/Card";
 
 function App() {
-  // const selectOptions: { label: string; value: string }[] = [
-  //   { label: "This BMC UI", value: "bmc_ui" },
-  //   { label: "LDAP", value: "ldap" },
-  //   { label: "Active Directory", value: "active_dir" },
-  //   { label: "Smart Card", value: "smart_card" },
-  //   { label: "RSA", value: "rsa" },
-  // ];
-
-  // const links = [
-  //   { label: "Help", href: "https://www.dell.com/support/home" },
-  //   {
-  //     label: "Drivers & Downloads",
-  //     href: "https://www.dell.com/support/home/en-us?app=drivers",
-  //   },
-  //   {
-  //     label: "Manuals",
-  //     href: "https://www.dell.com/support/home/en-us?app=manuals",
-  //   },
-  //   { label: "TechCenter", href: "https://developer.dell.com" },
-  // ];
-
-  // const handleLogin = (credentials: Credentials) => {
-  //   console.log(credentials);
-  // };
-
-  const handleRSALogin = (credentials: RSACredentials) => {
-    console.log(credentials);
-  };
-
-  // const handleSmartCardLogin = (credentials: SCCredentials) => {
-  //   console.log(credentials);
-  // };
-
-  const onCancel = () => {
-    console.log("action canceled");
-  };
+  const jobs = [
+    { type: "Pending", count: 0 },
+    { type: "In Progress", count: 5 },
+    { type: "Finished", count: 15 },
+  ];
 
   return (
     <div>
-      {/* <LoginPage
-        productIcon={<img src={productIcon} alt="product icon" />}
-        productTitle="Server BMC GUI"
-        productSubtitle="Server Hostname | Server Model | License Type"
-        domainOptions={selectOptions}
-        onSubmit={handleLogin}
-        linksArray={links}
-        miscellaneousMsg="Security Notice: Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
-        "
-      /> */}
-      <RSALoginPage
-        productIcon={<img src={productIcon} alt="product icon" />}
-        productTitle="Server BMC GUI"
-        onSubmit={handleRSALogin}
-        onCancel={onCancel}
-        miscellaneousMsg="Copyright Notice: Lorem ipsum dolor sit amet, consectetur adipiscing elit."
-      />
-      {/* <SmartCardLoginPage
-        productIcon={<img src={productIcon} alt="product icon" />}
-        productTitle="Server BMC GUI"
-        onSubmit={handleSmartCardLogin}
-        onCancel={onCancel}
-        miscellaneousMsg="Copyright Notice: Lorem ipsum dolor sit amet, consectetur adipiscing elit."
-      /> */}
+      <Card title="System Information" footer="View All">
+        <div>
+          {jobs.map((job) => (
+            <div className="job-section">
+              <div className="job-header">
+                <h3>
+                  {job.type}: {job.count}
+                </h3>
+              </div>
+              <div className="job-content">
+                {job.count === 0 && <p>No {job.type} jobs </p>}
+                {job.count > 0 && (
+                  <p>
+                    {job.count} {job.type} jobs{" "}
+                  </p>
+                )}
+              </div>
+            </div>
+          ))}
+        </div>
+      </Card>
     </div>
   );
 }
