@@ -1,0 +1,122 @@
+.authShell {
+  display: flex;
+  flex-direction: column;
+  height: 100dvh;
+  margin: 0 auto;
+  background-color: var(--color-bg-card);
+  border: 1px solid var(--color-border);
+  font-family: var(--font-family-base);
+}
+
+/* ---- upper section: blue brand band ---- */
+.upperSection {
+  display: flex;
+  flex-direction: column;
+  flex: 0 0 40%;
+  min-height: 40%;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  padding: 2rem 1.5rem 1.75rem;
+  background-color: var(--color-primary);
+  color: var(--color-text-inverse);
+  text-align: center;
+}
+
+.productIcon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.productIcon svg,
+.productIcon img {
+  display: block;
+  width: 4.5rem;
+  height: 4.5rem;
+}
+
+.title {
+  margin-top: 1.25rem;
+  font-size: var(--font-size-xxl);
+  font-weight: var(--font-weight-bold);
+  line-height: var(--line-height-base);
+}
+
+.logoContainer {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 0.25rem;
+}
+
+.companyLogo {
+  width: 12.5rem;
+  height: auto;
+}
+
+.subtitle {
+  margin-top: 1.5rem;
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-regular);
+  line-height: var(--line-height-base);
+}
+
+/* ---- input area ---- */
+.inputArea {
+  display: flex;
+  flex-direction: column;
+  flex: 1 1 auto;
+  min-height: 0;
+  align-items: center;
+  justify-content: center;
+  max-width: 34rem;
+  margin: 1.5rem auto;
+  /** inside inputArea, TextField is child
+  which reads this variable, so, label column is 9.375rem wide */
+  --field-label-width: 9.375rem;
+  --field-gap: 1.25rem;
+}
+
+/* ---- links row ---- */
+.links {
+  flex: 0 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  padding: 0 1.5rem;
+  text-align: center;
+  font-size: var(--font-size-sm);
+}
+
+.link {
+  color: var(--color-primary);
+  text-decoration: none;
+}
+
+.link:hover {
+  text-decoration: underline;
+}
+
+.separator {
+  margin: 0 0.5rem;
+  color: var(--color-border);
+}
+
+.miscellaneous {
+  flex: 0 0 auto;
+  margin: 60px 0;
+  text-align: center;
+}
+
+/* ---- tablet portrait: stack labels above inputs ---- */
+@media (max-width: 48rem) {
+  .inputArea {
+    --field-label-width: 0rem;
+    --field-gap: 0rem;
+  }
+
+  .loginBtn {
+    margin-left: 0;
+  }
+}
