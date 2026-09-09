@@ -1,19 +1,19 @@
 import { useState, type ReactNode } from "react";
-import styles from "./RSALoginPage.module.css";
+import styles from "./SmartCardLogin.module.css";
 import { TextField } from "../../components/TextField/TextField";
 import { Form } from "../../components/Form/Form";
 import { Button } from "../../components/Button/Button";
 import { AuthShell } from "../AuthShell/AuthShell";
 
-export interface RSACredentials {
-  passcode: string;
+export interface SCCredentials {
+  scpin: string;
 }
 
-interface RSALoginProps {
+interface SmartCardLoginProps {
   productIcon?: ReactNode;
   productTitle: string;
   productSubtitle?: string;
-  onSubmit: (credentials: RSACredentials) => void;
+  onSubmit: (credentials: SCCredentials) => void;
   onCancel: () => void;
   linksArray?: {
     label: string;
@@ -22,7 +22,7 @@ interface RSALoginProps {
   miscellaneousMsg?: string;
 }
 
-export function RSALoginPage({
+export function SmartCardLoginPage({
   productIcon,
   productTitle,
   productSubtitle,
@@ -30,11 +30,11 @@ export function RSALoginPage({
   onCancel,
   linksArray,
   miscellaneousMsg,
-}: RSALoginProps) {
+}: SmartCardLoginProps) {
   // state
-  const [rsaPasscode, setRsaPasscode] = useState("");
+  const [smartCardpin, setSmartCardpin] = useState("");
   const handleSubmit = () => {
-    onSubmit({ passcode: rsaPasscode });
+    onSubmit({ scpin: smartCardpin });
   };
 
   // JSX
@@ -49,9 +49,10 @@ export function RSALoginPage({
       <Form onSubmit={handleSubmit}>
         <TextField
           type="password"
-          label="RSA Passcode: "
-          value={rsaPasscode}
-          onChange={(e) => setRsaPasscode(e.target.value)}
+          label="Smart Card Pin: "
+          placeholder="Enter Smart card pin"
+          value={smartCardpin}
+          onChange={(e) => setSmartCardpin(e.target.value)}
         />
         <div className={styles.buttons}>
           <div className={styles.loginBtn}>
