@@ -10,6 +10,12 @@ interface SelectFieldProps {
   id?: string;
 }
 
+/**
+ * Labelled dropdown, laid out as the same label/control row as TextField so
+ * the two line up when stacked in a form.
+ *
+ * Controlled like TextField: pass "" as `value` to show the placeholder option.
+ */
 export function SelectField({
   label,
   value,
@@ -18,6 +24,7 @@ export function SelectField({
   id,
 }: SelectFieldProps) {
   // state
+  // Generated id when none is given, so the label stays associated.
   const resolvedId = useFieldId(id);
 
   // JSX
@@ -32,6 +39,8 @@ export function SelectField({
         onChange={onChange}
         className={styles.selectBox}
       >
+        {/* Placeholder row: `disabled` stops it being re-selected once the
+            user picks a real option, `hidden` keeps it out of the open list. */}
         <option value="" disabled hidden>
           Select an option...
         </option>

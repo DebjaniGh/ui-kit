@@ -14,6 +14,15 @@ interface AuthShellProps {
   children: ReactNode;
 }
 
+/**
+ * Shared chrome for every login screen: product heading, company logo, then
+ * helper links and a footer message.
+ *
+ * The three login templates differ only in which credential fields they show,
+ * so that part is passed in as `children` and everything around it lives here
+ * once. Add anything common to all login screens to this file, not to the
+ * individual templates.
+ */
 export function AuthShell({
   productIcon,
   productTitle,
@@ -39,13 +48,19 @@ export function AuthShell({
         )}
       </div>
 
+      {/* Whatever credential form the specific login template supplies. */}
       <div className={styles.inputArea}>{children}</div>
 
       {linksArray && linksArray.length > 0 && (
+        // aria-label distinguishes this nav from any other on the page.
         <nav className={styles.links} aria-label="Helpful links">
           {linksArray.map((link, index) => (
             <span key={link.href}>
+              {/* Separator before every link but the first, so the row reads
+                  "A | B | C" with no trailing pipe. */}
               {index > 0 && <span className={styles.separator}>|</span>}
+              {/* Opens in a new tab so a part-filled login form is not lost;
+                  rel="noreferrer" is the required guard for target="_blank". */}
               <a
                 className={styles.link}
                 href={link.href}

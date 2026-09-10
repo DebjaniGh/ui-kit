@@ -5,6 +5,7 @@ import { Form } from "../../components/Form/Form";
 import { Button } from "../../components/Button/Button";
 import { AuthShell } from "../AuthShell/AuthShell";
 
+/** What onSubmit hands back: the PIN unlocking the inserted smart card. */
 export interface SCCredentials {
   scpin: string;
 }
@@ -22,6 +23,12 @@ interface SmartCardLoginProps {
   miscellaneousMsg?: string;
 }
 
+/**
+ * Smart card login screen: PIN entry plus Log in / Cancel.
+ *
+ * Assumes the card is already inserted and detected -- this template only
+ * collects the PIN and reports it; reader detection is the caller's job.
+ */
 export function SmartCardLoginPage({
   productIcon,
   productTitle,
@@ -32,6 +39,7 @@ export function SmartCardLoginPage({
   miscellaneousMsg,
 }: SmartCardLoginProps) {
   // state
+  // PIN stays local and leaves only through onSubmit.
   const [smartCardpin, setSmartCardpin] = useState("");
   const handleSubmit = () => {
     onSubmit({ scpin: smartCardpin });
@@ -47,6 +55,7 @@ export function SmartCardLoginPage({
       miscellaneousMsg={miscellaneousMsg}
     >
       <Form onSubmit={handleSubmit}>
+        {/* type="password" masks the PIN as it is typed. */}
         <TextField
           type="password"
           label="Smart Card Pin: "
@@ -59,6 +68,7 @@ export function SmartCardLoginPage({
             <Button label="Log in" variant="primary" type="submit" />
           </div>
           <div className={styles.cancelBtn}>
+            {/* type="button" keeps Cancel from submitting the form. */}
             <Button
               label="Cancel"
               variant="secondary"

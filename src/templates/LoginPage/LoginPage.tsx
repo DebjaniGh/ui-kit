@@ -7,6 +7,8 @@ import { Button } from "../../components/Button/Button";
 import { SelectField } from "../../components/Select/SelectField";
 import { AuthShell } from "../AuthShell/AuthShell";
 
+/** What onSubmit hands back. `domain` is absent unless the caller passed
+ *  `domainOptions`, since the selector is only rendered in that case. */
 export interface Credentials {
   username: string;
   password: string;
@@ -29,6 +31,12 @@ interface LoginPageProps {
   miscellaneousMsg?: string;
 }
 
+/**
+ * Standard username/password login screen, with an optional domain selector.
+ *
+ * Page chrome comes from AuthShell; this template owns only the credential
+ * fields and the state behind them.
+ */
 export function LoginPage({
   productIcon,
   productTitle,
@@ -39,10 +47,13 @@ export function LoginPage({
   miscellaneousMsg,
 }: LoginPageProps) {
   // state
+  // Field values live here and reach the caller only on submit, so the
+  // password is never lifted into parent state or re-rendered from above.
   const [usrname, setUsername] = useState("");
   const [pwd, setPwd] = useState("");
   const [domain, setDomain] = useState("");
 
+  // Form already suppressed the native submit; just report the values.
   const handleSubmit = () => {
     onSubmit({
       username: usrname,
@@ -74,6 +85,8 @@ export function LoginPage({
           placeholder="Enter password here ..."
           onChange={(e) => setPwd(e.target.value)}
         />
+        {/* Domain selector only appears when there is something to choose
+            from -- a one-entry or empty dropdown is just noise. */}
         {domainOptions && domainOptions.length > 0 && (
           <SelectField
             label="Domain"

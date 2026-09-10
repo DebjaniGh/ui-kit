@@ -12,6 +12,12 @@ interface TextFieldProps {
   type?: "text" | "password"; // default to "text"
 }
 
+/**
+ * Labelled single-line input, rendered as a label/input row.
+ *
+ * Fully controlled: the caller owns `value` and must update it from
+ * `onChange`, otherwise the field will appear frozen.
+ */
 export function TextField({
   label,
   value,
@@ -22,14 +28,16 @@ export function TextField({
   type = "text",
 }: TextFieldProps) {
   // state
+  // Falls back to a generated id so <label htmlFor> always points at this
+  // input, even when the caller does not supply one.
   const resolvedId = useFieldId(id);
   const [
     isPwdVisible,
     //setPwdVisible
   ] = useState(false);
-  // if user has toggled on visibility for pwd field,
-  // then we need to show it as "text";
-  // type "password" means dotted field
+  // A password field renders as dots; revealing it means swapping the input's
+  // type to "text". Only the type changes -- `value` and state are untouched,
+  // so the caret position and entered text survive the toggle.
   const inputType = type === "password" && isPwdVisible ? "text" : type;
 
   //JSX

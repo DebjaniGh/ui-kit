@@ -5,6 +5,7 @@ import { Form } from "../../components/Form/Form";
 import { Button } from "../../components/Button/Button";
 import { AuthShell } from "../AuthShell/AuthShell";
 
+/** What onSubmit hands back: the combined PIN + token code the user typed. */
 export interface RSACredentials {
   passcode: string;
 }
@@ -22,6 +23,13 @@ interface RSALoginProps {
   miscellaneousMsg?: string;
 }
 
+/**
+ * RSA SecurID login screen: a single passcode field plus Log in / Cancel.
+ *
+ * Same AuthShell chrome as LoginPage, differing only in the credential it
+ * collects. `onCancel` is required because there is no sensible default for
+ * where cancelling should lead.
+ */
 export function RSALoginPage({
   productIcon,
   productTitle,
@@ -32,6 +40,7 @@ export function RSALoginPage({
   miscellaneousMsg,
 }: RSALoginProps) {
   // state
+  // Passcode stays local and leaves only through onSubmit.
   const [rsaPasscode, setRsaPasscode] = useState("");
   const handleSubmit = () => {
     onSubmit({ passcode: rsaPasscode });
@@ -47,6 +56,7 @@ export function RSALoginPage({
       miscellaneousMsg={miscellaneousMsg}
     >
       <Form onSubmit={handleSubmit}>
+        {/* type="password" masks the passcode as it is typed. */}
         <TextField
           type="password"
           label="RSA Passcode: "
@@ -58,6 +68,7 @@ export function RSALoginPage({
             <Button label="Log in" variant="primary" type="submit" />
           </div>
           <div className={styles.cancelBtn}>
+            {/* type="button" keeps Cancel from submitting the form. */}
             <Button
               label="Cancel"
               variant="secondary"

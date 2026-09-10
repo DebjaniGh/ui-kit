@@ -6,6 +6,13 @@ interface CardProps {
   footer?: ReactNode;
   children: ReactNode;
 }
+/**
+ * Titled container for a section of page content.
+ *
+ * `footer` is a ReactNode rather than a string so callers can pass a link or
+ * button ("View All") instead of plain text; when omitted the footer row is
+ * not rendered at all, avoiding an empty bordered strip.
+ */
 export function Card({ title, footer, children }: CardProps) {
   return (
     <div className={styles.card}>
