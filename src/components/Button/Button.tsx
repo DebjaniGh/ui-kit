@@ -4,7 +4,7 @@ import styles from "./Button.module.css";
 interface ButtonProps {
   label: string;
   icon?: ReactNode;
-  iconPosition?: "start" | "end";
+  trailingIcon?: ReactNode; // to display a chevron for a dropdown btn
   variant?: "primary" | "secondary";
   type?: "button" | "submit" | "reset";
   onClick?: (event: MouseEvent<HTMLButtonElement>) => void;
@@ -21,7 +21,7 @@ interface ButtonProps {
 export function Button({
   label,
   icon,
-  iconPosition = "start",
+  trailingIcon,
   variant = "primary",
   type = "button",
   onClick,
@@ -36,15 +36,15 @@ export function Button({
     >
       {/* Icons are decorative here: the label already names the action, so
           aria-hidden keeps screen readers from announcing it twice. */}
-      {icon && iconPosition === "start" && (
+      {icon && (
         <span className={styles.icon} aria-hidden="true">
           {icon}
         </span>
       )}
       {label}
-      {icon && iconPosition === "end" && (
+      {trailingIcon && (
         <span className={styles.icon} aria-hidden="true">
-          {icon}
+          {trailingIcon}
         </span>
       )}
     </button>

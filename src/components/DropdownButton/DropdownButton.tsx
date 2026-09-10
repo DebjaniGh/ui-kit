@@ -13,6 +13,7 @@ export interface DropdownItem {
 interface DropdownButtonProps {
   label: string;
   icon?: ReactNode;
+  trailingIcon?: ReactNode;
   items: DropdownItem[];
   variant?: "primary" | "secondary";
 }
@@ -26,6 +27,7 @@ interface DropdownButtonProps {
 export function DropdownButton({
   label,
   icon,
+  trailingIcon,
   items,
   variant = "primary",
 }: DropdownButtonProps) {
@@ -61,6 +63,7 @@ export function DropdownButton({
       <Button
         label={label}
         icon={icon}
+        trailingIcon={trailingIcon}
         variant={variant}
         onClick={() => setIsOpen((prev) => !prev)}
       />

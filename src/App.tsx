@@ -7,8 +7,15 @@ import warningIcon from "./assets/triangle-alert.svg";
 import healthyIcon from "./assets/circle-check.svg";
 import criticalIcon from "./assets/octagon-x.svg";
 import unknownIcon from "./assets/shield-question-mark.svg";
+import powerIcon from "./assets/power_icon.svg";
+import ledIcon from "./assets/sun.svg";
+import chevronIcon from "./assets/chevron-down.svg";
 import "./App.css";
 import { Fragment } from "react";
+import {
+  DropdownButton,
+  type DropdownItem,
+} from "./components/DropdownButton/DropdownButton";
 
 function App() {
   const jobs = [
@@ -55,8 +62,52 @@ function App() {
     { label: "IP Address", value: "10.10.101.0" },
   ];
 
+  const powerCtrlBtnOptions: DropdownItem[] = [
+    {
+      label: "Power On",
+      onClick: () => {
+        console.log("Powered On");
+      },
+    },
+    { label: "Power Off", onClick: () => console.log("Power Off") },
+    { label: "Power Cycle", onClick: () => console.log("Power Cycle") },
+    {
+      label: "Graceful Shutdown",
+      onClick: () => console.log("Graceful Shutdown"),
+    },
+  ];
+
+  const ledOptions: DropdownItem[] = [
+    {
+      label: "LED On",
+      onClick: () => {
+        console.log("Switched on LED.");
+      },
+    },
+    {
+      label: "LED Off",
+      onClick: () => {
+        console.log("Switched off LED.");
+      },
+    },
+  ];
+
   return (
     <div>
+      <div className="btn-container">
+        <DropdownButton
+          label="Power Control"
+          icon={<img src={powerIcon} alt="power-control" />}
+          trailingIcon={<img src={chevronIcon} alt="dropdown icon" />}
+          items={powerCtrlBtnOptions}
+        />
+        <DropdownButton
+          label="LED Control"
+          icon={<img src={ledIcon} alt="led-control" />}
+          trailingIcon={<img src={chevronIcon} alt="dropdown icon" />}
+          items={ledOptions}
+        />
+      </div>
       <div className="cards-container">
         <Card title="Server Health Information">
           <div className="status-grid">
