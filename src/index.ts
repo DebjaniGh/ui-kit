@@ -8,6 +8,8 @@ export { RSALoginPage } from "./templates/RSALoginPage/RSALoginPage";
 export { SmartCardLoginPage } from "./templates/SmartCardLogin/SmartCardLogin";
 export { Card } from "./components/Card/Card";
 export { StatusIndicator } from "./components/StatusIndicator/StatusIndicator";
+export { DropdownButton } from "./components/DropdownButton/DropdownButton";
+export type { DropdownItem } from "./components/DropdownButton/DropdownButton";
 export type { Status } from "./components/StatusIndicator/StatusIndicator";
 export type { Credentials } from "./templates/LoginPage/LoginPage";
 export type { RSACredentials } from "./templates/RSALoginPage/RSALoginPage";
