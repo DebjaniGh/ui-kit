@@ -10,6 +10,7 @@ export { Card } from "./components/Card/Card";
 export { StatusIndicator } from "./components/StatusIndicator/StatusIndicator";
 export { DropdownButton } from "./components/DropdownButton/DropdownButton";
 export { IconButton } from "./components/IconButton/IconButton";
+export { AppHeader } from "./components/AppHeader/AppHeader";
 export type { DropdownItem } from "./components/DropdownButton/DropdownButton";
 export type { Status } from "./components/StatusIndicator/StatusIndicator";
 export type { Credentials } from "./templates/LoginPage/LoginPage";
