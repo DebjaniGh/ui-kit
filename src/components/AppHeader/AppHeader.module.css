@@ -1,0 +1,31 @@
+/* AppHeader.module.css */
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 20px;
+  background-color: var(--color-primary);
+  color: var(--color-text-inverse);
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.productIcon {
+  display: inline-flex;
+  align-items: center;
+}
+
+.productName {
+  font-size: var(--font-size-lg);
+  font-weight: var(--font-weight-medium);
+}
+
+.actions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
