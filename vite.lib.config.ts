@@ -21,7 +21,7 @@ export default defineConfig({
       fileName: (format) => (format === "es" ? "index.js" : "index.cjs"),
     },
     rollupOptions: {
-      external: ["react", "react-dom", "react/jsx-runtime"], // external peer dependencies to be supplied by the host application.
+      external: ["react", "react-dom", "react/jsx-runtime", "react-router-dom"], // external peer dependencies to be supplied by the host application.
     },
   },
 });
