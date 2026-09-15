@@ -8,7 +8,7 @@ export interface SidebarMenuItem {
   path: string;
 }
 
-interface SidebarProps {
+export interface SidebarProps {
   isOpen: boolean;
   openIcon: ReactNode;
   closeIcon: ReactNode;

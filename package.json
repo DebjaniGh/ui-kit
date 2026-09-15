@@ -1,7 +1,7 @@
 {
-  "name": "ui-kit",
-  "private": true,
-  "version": "0.0.0",
+  "name": "@debjani6ghosh/bmc-ui-kit",
+  "private": false,
+  "version": "0.1.0",
   "type": "module",
   "scripts": {
     "dev": "vite",
@@ -13,8 +13,8 @@
   "dependencies": {
     "lucide-react": "^1.41.0"
   },
-  "main": "./dist/index.js",
-  "module": "./dist/index.mjs",
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.js",
   "types": "./dist/index.d.ts",
   "sideEffects": [
     "**/*.css"
@@ -44,6 +44,9 @@
     "vite-plugin-dts": "^5.1.0",
     "vite-plugin-lib-inject-css": "^2.2.2"
   },
+  "files": [
+    "dist"
+  ],
   "exports": {
     ".": {
       "import": {

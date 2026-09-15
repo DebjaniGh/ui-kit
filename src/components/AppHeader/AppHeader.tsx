@@ -2,7 +2,7 @@
 import type { ReactNode } from "react";
 import styles from "./AppHeader.module.css";
 
-interface AppHeaderProps {
+export interface AppHeaderProps {
   productIcon?: ReactNode;
   productName: string;
   actions?: ReactNode;
