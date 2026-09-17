@@ -1,6 +1,7 @@
 import type { ReactNode } from "react";
 import { NavLink } from "react-router-dom";
 import styles from "./Sidebar.module.css";
+import { IconButton } from "../IconButton/IconButton";
 
 export interface SidebarMenuItem {
   label: string;
@@ -40,13 +41,11 @@ export function Sidebar({
           </li>
         ))}
       </ul>
-      <button
-        type="button"
+      <IconButton
+        icon={isOpen ? openIcon : closeIcon}
+        ariaLabel={isOpen ? "open panel" : "closed panel"}
         onClick={toggleSidebar}
-        className={styles.sidebarBtn}
-      >
-        {isOpen ? openIcon : closeIcon}
-      </button>
+      />
     </div>
   );
 }
