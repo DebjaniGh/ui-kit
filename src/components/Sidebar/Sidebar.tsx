@@ -41,11 +41,13 @@ export function Sidebar({
           </li>
         ))}
       </ul>
-      <IconButton
-        icon={isOpen ? openIcon : closeIcon}
-        ariaLabel={isOpen ? "open panel" : "closed panel"}
-        onClick={toggleSidebar}
-      />
+      <div className={styles.sidebarFooter}>
+        <IconButton
+          icon={isOpen ? openIcon : closeIcon}
+          ariaLabel={isOpen ? "open panel" : "closed panel"}
+          onClick={toggleSidebar}
+        />
+      </div>
     </div>
   );
 }
