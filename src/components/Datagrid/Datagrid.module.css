@@ -1,0 +1,79 @@
+.dgContainer {
+  width: 100%;
+  border: 1px solid var(--color-border);
+  border-radius: 4px;
+  overflow: hidden; /* clips the header's background-color to the rounded corners */
+}
+
+.dg {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+  color: var(--color-text);
+  font-size: var(--font-size-md);
+}
+
+.dgHeader {
+  background-color: var(--color-bg-subtle);
+  border-bottom: 2px solid var(--color-border);
+}
+
+.dgHeaderCell {
+  padding: 12px;
+  cursor: pointer;
+  user-select: none;
+}
+
+.dgBodyRow {
+  border-bottom: 1px solid var(--color-border);
+}
+
+.dgBodyRowCell {
+  padding: 12px;
+}
+
+.dgPagination {
+  display: flex;
+  gap: 10px;
+  margin-top: 15px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.dgPagination button {
+  padding: 6px 14px;
+  border: 1px solid var(--color-border);
+  border-radius: 4px;
+  background-color: var(--color-bg-card);
+  color: var(--color-text);
+  cursor: pointer;
+}
+
+.dgPagination button:hover:not(:disabled) {
+  background-color: var(--color-bg-subtle);
+}
+
+.dgPagination button:disabled {
+  cursor: not-allowed;
+  opacity: 0.5;
+}
+
+.dgPageInfo {
+  color: var(--color-text-muted);
+}
+
+.dgPageSize {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-left: auto;
+}
+
+.dgPageSizeSelect {
+  padding: 4px 8px;
+  border: 1px solid var(--color-border);
+  border-radius: 4px;
+  background-color: var(--color-bg-card);
+  color: var(--color-text);
+  cursor: pointer;
+}
