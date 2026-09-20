@@ -1,11 +1,5 @@
-import { InfoField } from "./components/InfoField/InfoField";
-
 function App() {
-  return (
-    <div>
-      <InfoField label="abc" value="xyz" />
-    </div>
-  );
+  return <div></div>;
 }
 
 export default App;
