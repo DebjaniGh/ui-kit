@@ -12,6 +12,7 @@ export { DropdownButton } from "./components/DropdownButton/DropdownButton";
 export { IconButton } from "./components/IconButton/IconButton";
 export { AppLayout } from "./templates/AppLayout/AppLayout";
 export { DataGrid } from "./components/Datagrid/Datagrid";
+export { InfoField } from "./components/InfoField/InfoField";
 export type { DropdownItem } from "./components/DropdownButton/DropdownButton";
 export type { Status } from "./components/StatusIndicator/StatusIndicator";
 export type { Credentials } from "./templates/LoginPage/LoginPage";
