@@ -13,10 +13,22 @@
   padding: 10px 18px;
   color: var(--color-text-muted);
   text-decoration: none;
-  font-size: var(--font-size-md);
+  font-size: var(--font-size-lg);
   border-bottom: 2px solid transparent;
 }
 
+.plainTab {
+  padding: 10px 18px;
+  color: var(--color-text-muted);
+  text-decoration: none;
+  font-size: var(--font-size-md);
+  background: none;
+  border: 2px solid var(--color-border);
+  font: inherit;
+  cursor: pointer;
+}
+
+.plainTab:hover,
 .tab:hover {
   color: var(--color-text);
   background-color: var(--color-bg-subtle);
@@ -24,8 +36,16 @@
 
 .active {
   color: var(--color-primary);
-  border-bottom-color: var(--color-primary);
+
   font-weight: var(--font-weight-medium);
+}
+
+.tab.active {
+  border-bottom-color: var(--color-primary);
+}
+
+.plainTab.active {
+  border-color: var(--color-primary);
 }
 
 .tabContent {
