@@ -1,17 +1,17 @@
 import { NavLink, Outlet } from "react-router-dom";
-import styles from "./Tab.module.css";
+import styles from "./RoutingTab.module.css";
 
-export interface TabItem {
+export interface RoutingTabItem {
   label: string;
   path: string;
 }
 
-interface TabsProps {
-  tabs: TabItem[];
+interface RoutingTabsProps {
+  tabs: RoutingTabItem[];
 }
 
 /** URL-driven tabs */
-export function Tabs({ tabs }: TabsProps) {
+export function RoutingTabs({ tabs }: RoutingTabsProps) {
   return (
     <div className={styles.tabsContainer}>
       <div className={styles.tabList}>
