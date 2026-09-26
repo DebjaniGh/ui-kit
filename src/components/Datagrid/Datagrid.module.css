@@ -2,11 +2,13 @@
   width: 100%;
   border: 1px solid var(--color-border);
   border-radius: 4px;
-  overflow: hidden; /* clips the header's background-color to the rounded corners */
+  overflow-x: auto;
+  overflow-y: hidden;
 }
 
 .dg {
   width: 100%;
+  min-width: 640px; /* forces columns to keep readable width, triggers scroll on narrow viewports */
   border-collapse: collapse;
   text-align: left;
   color: var(--color-text);
