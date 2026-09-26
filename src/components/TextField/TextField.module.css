@@ -46,3 +46,16 @@
   cursor: not-allowed;
   background-color: var(--color-bg-subtle);
 }
+
+/* ---- tablet portrait: stack labels above inputs ---- */
+@media (max-width: 48rem) {
+  .field {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 4px;
+  }
+
+  .label {
+    width: auto;
+  }
+}
