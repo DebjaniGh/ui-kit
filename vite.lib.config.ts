@@ -18,10 +18,30 @@ export default defineConfig({
     lib: {
       entry: resolve(__dirname, "src/index.ts"),
       formats: ["es", "cjs"],
-      fileName: (format) => (format === "es" ? "index.js" : "index.cjs"),
     },
     rollupOptions: {
       external: ["react", "react-dom", "react/jsx-runtime", "react-router-dom"], // external peer dependencies to be supplied by the host application.
+      // An explicit array, one entry per format: with a single shared output
+      // object, Vite still writes both the "es" and "cjs" passes into dist/
+      // using the same entryFileNames pattern, so the second pass silently
+      // overwrites the first (dist/index.cjs ends up missing entirely).
+      // Keeping formats distinct here is what keeps preserveModules safe
+      // for dual-format output.
+      output: [
+        {
+          format: "es",
+          preserveModules: true,
+          preserveModulesRoot: "src",
+          entryFileNames: "[name].js",
+        },
+        {
+          format: "cjs",
+          preserveModules: true,
+          preserveModulesRoot: "src",
+          entryFileNames: "[name].cjs",
+          exports: "named",
+        },
+      ],
     },
   },
 });
