@@ -12,6 +12,7 @@ export { DropdownButton } from "./components/DropdownButton/DropdownButton";
 export { IconButton } from "./components/IconButton/IconButton";
 export { AppLayout } from "./templates/AppLayout/AppLayout";
 export { DataGrid } from "./components/Datagrid/Datagrid";
+export { Modal } from "./components/Modal/Modal";
 export { InfoField } from "./components/InfoField/InfoField";
 export { RoutingTabs } from "./components/RoutingTab/RoutingTab";
 export { Tabs } from "./components/Tabs/Tabs";

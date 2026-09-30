@@ -1,0 +1,37 @@
+.overlay {
+  position: fixed;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* dims the page behind the dialog without a design-token color, since this
+     is the one place a translucent black scrim is actually wanted */
+  background-color: rgba(0, 0, 0, 0.4);
+  z-index: 1000;
+}
+
+.dialog {
+  width: 100%;
+  max-width: 26rem;
+  margin: 0 1rem;
+  padding: 1.5rem;
+  background-color: var(--color-bg-card);
+  border: 1px solid var(--color-border);
+  border-radius: 4px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+  font-family: var(--font-family-base);
+}
+
+.title {
+  margin: 0 0 0.75rem;
+  color: var(--color-text);
+  font-size: var(--font-size-lg);
+  font-weight: var(--font-weight-bold);
+  line-height: var(--line-height-base);
+}
+
+.body {
+  color: var(--color-text);
+  font-size: var(--font-size-md);
+  line-height: var(--line-height-base);
+}
